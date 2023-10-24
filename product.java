@@ -1,12 +1,9 @@
 package kiosk_pj;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class Product extends Menu {
+public class product extends menu {
     private double price;
 
-    public Product(String name, String explanation, double price) {
+    public product(String name, String explanation, double price) {
         super(name,explanation);
         this.price = price;
     }
