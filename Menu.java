@@ -4,16 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class menu {
+public class Menu {
     private String name;
     private String explanation;
 
     //food List 생성
-    private List<product> bugerlist = new ArrayList<>();
-    private List<product> dirnklist = new ArrayList<>();
-    private List<product> beerlist = new ArrayList<>();
+    private List<Product> bugerlist = new ArrayList<>();
+    private List<Product> dirnklist = new ArrayList<>();
+    private List<Product> beerlist = new ArrayList<>();
 
-    public menu(String  name, String explanation){
+    public Menu(String  name, String explanation){
         this.name = name;
         this.explanation=explanation;
     }
@@ -40,25 +40,25 @@ public class menu {
     }
 
     public void addMenu() {
-        bugerlist.add(new product("ShackBurger","토마토, 양상추, 쉑소스가 토핑된 치즈버거",6900));
-        bugerlist.add(new product("SmokeShack","베이컨, 체리 페퍼에 쉑소스가 토핑된 치즈버거",8900));
-        bugerlist.add(new product("Shroom Burger","몬스터 치즈와 체다 치즈로 속을 채운 베지테리안 버거",9400));
-        bugerlist.add(new product("Cheeseburger","포테이토 번과 비프패티, 치즈가 토핑된 치즈버거",6900));
+        bugerlist.add(new Product("ShackBurger","토마토, 양상추, 쉑소스가 토핑된 치즈버거",6900));
+        bugerlist.add(new Product("SmokeShack","베이컨, 체리 페퍼에 쉑소스가 토핑된 치즈버거",8900));
+        bugerlist.add(new Product("Shroom Burger","몬스터 치즈와 체다 치즈로 속을 채운 베지테리안 버거",9400));
+        bugerlist.add(new Product("Cheeseburger","포테이토 번과 비프패티, 치즈가 토핑된 치즈버거",6900));
 
 
-        dirnklist.add(new product("Coke","콜라는 역시 펩시 콜라!",2000));
-        dirnklist.add(new product("Zero Coke","건강 챙겨야 하는 현대인을 위한 제로 콜라!",3000));
-        dirnklist.add(new product("Sprite","국내 1위 이거 마시면 우리..",2500));
+        dirnklist.add(new Product("Coke","콜라는 역시 펩시 콜라!",2000));
+        dirnklist.add(new Product("Zero Coke","건강 챙겨야 하는 현대인을 위한 제로 콜라!",3000));
+        dirnklist.add(new Product("Sprite","국내 1위 이거 마시면 우리..",2500));
 
-        beerlist.add(new product("Draft Beer","생맥주는 역시 클라우드 생 드래프트",3500));
-        beerlist.add(new product("Dark Beer","5주년 기념으로 만들어진 특별 기네스 생맥주",5000));
-        beerlist.add(new product("Bottled beer","수락산의 정기를 담은 수제 맥주",7000));
+        beerlist.add(new Product("Draft Beer","생맥주는 역시 클라우드 생 드래프트",3500));
+        beerlist.add(new Product("Dark Beer","5주년 기념으로 만들어진 특별 기네스 생맥주",5000));
+        beerlist.add(new Product("Bottled beer","수락산의 정기를 담은 수제 맥주",7000));
     }
 
     public void bugerList() {
         System.out.println("[구매하실 제품번호를 입력해 장바구니에 담아주세요]");
         int index = 1;
-        for (product buger : bugerlist) {
+        for (Product buger : bugerlist) {
             System.out.println((index++) + "." + buger);
         }
         //어떤 버거를 선택했는지 스캔을 받는다.
@@ -81,7 +81,7 @@ public class menu {
     public void drinkList() {
         System.out.println("[구매하실 제품번호를 입력해 장바구니에 담아주세요]");
         int index = 1;
-        for (product drink : dirnklist) {
+        for (Product drink : dirnklist) {
             System.out.println((index++) + "." + drink);
         }
         System.out.println();
@@ -99,7 +99,7 @@ public class menu {
     public void beerList() {
         System.out.println("[구매하실 제품번호를 입력해 장바구니에 담아주세요]");
         int index = 1;
-        for (product beer : beerlist) {
+        for (Product beer : beerlist) {
             System.out.println((index++) + "." + beer);
         }
         System.out.println();
@@ -114,7 +114,7 @@ public class menu {
         }
     }
     // 상품확인 후 장바구니로 이동
-    public void order1(product product){
+    public void order1(Product product){
         System.out.println(product);
         System.out.println("선택한 메뉴를 장바구니에 추가하시겠습니까?");
         System.out.println("1. 확인        2. 취소");

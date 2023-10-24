@@ -4,10 +4,10 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        menu menu = new menu("name","explanation");
+        Menu menu = new Menu("name","explanation");
         menu.mainMenu();
         menu.addMenu();
-        basket basket = new basket();
+        Basket basket = new Basket();
         Scanner sc = new Scanner(System.in);
         int List = sc.nextInt();
 
